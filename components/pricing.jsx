@@ -1,27 +1,30 @@
 "use client";
 
-import React from "react";
-import { Card, CardContent } from "./ui/card";
 import { PricingTable } from "@clerk/nextjs";
 
-const Pricing = () => {
+export default function PricingPage() {
   return (
-    <Card className="border-emerald-900/30 shadow-lg bg-gradient-to-b from-emerald-950/30 to-transparent">
-      <CardContent className="p-6 md:p-8">
-        <PricingTable
-          checkoutProps={{
-            appearance: {
-              elements: {
-                drawerRoot: {
-                  zIndex: 2000,
-                },
-              },
-            },
-          }}
-        />
-      </CardContent>
-    </Card>
+    <div className="max-w-5xl mx-auto py-20 px-6">
+      <h1 className="text-4xl font-bold text-center mb-10">Our Pricing</h1>
+      <PricingTable
+        products={[
+          {
+            name: "Basic",
+            description: "Book up to 5 appointments",
+            prices: [{ id: "cplan_32AwVeQhZIQyRHq663YVHhMgBcJ", name: "Monthly" }],
+          },
+          {
+            name: "Pro",
+            description: "Unlimited appointments, priority support",
+            prices: [{ id: "cplan_32AwVeQhZIQyRHq663YVHhMgBcJ", name: "Monthly" }],
+          },
+          {
+            name: "Enterprise",
+            description: "Custom features, dedicated support",
+            prices: [{ id: "cplan_32AwVeQhZIQyRHq663YVHhMgBcJ", name: "Monthly" }],
+          },
+        ]}
+      />
+    </div>
   );
-};
-
-export default Pricing;
+}

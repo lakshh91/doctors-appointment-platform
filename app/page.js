@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Pricing from "@/components/pricing";
 import { creditBenefits, features, testimonials } from "@/lib/data";
+import { PricingTable } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -119,7 +120,7 @@ export default function Home() {
 
           <div className="mx-auto">
             {/* Clerk Pricing Table */}
-            <Pricing />
+           <Pricing />
 
             {/* Description */}
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">
